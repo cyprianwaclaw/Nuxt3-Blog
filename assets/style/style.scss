@@ -1,0 +1,75 @@
+@import "variables";
+.test {
+    background-color: $page-backgroud
+}
+
+h2 {
+    font-family: $family-heading;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.base-input {
+    position: relative;
+    width: 100%;
+}
+
+input:focus {
+    appearance: none;
+    -webkit-appearance: none;
+    border-color: $primary;
+    border-width: 20px;
+    color: $text-black !important;
+}
+
+input::placeholder {
+    font-size: 15px;
+    color: $text-gray
+}
+
+input:focus::placeholder {
+    font-size: 0px;
+}
+
+.help-message {
+    // position: absolute;
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.has-error input {
+    background-color: $error-backgrund;
+    color: $color-error;
+    border: 1px solid$color-error;
+    outline: none;
+}
+
+.has-error input:focus {
+    border-color: $color-error;
+}
+
+.has-error .help-message {
+    color: $color-error;
+}
+
+.success input {
+    background-color: $success-backgrund;
+    color: $color-success;
+    // border: 2px solid $border;
+    border: 2px solid $color-success;
+    outline: none;
+}
+
+.success input:focus {
+    border-color: $color-success;
+}
+
+.success .help-message {
+    color: $color-success;
+    position: absoute;
+    // padding-top: 12px
+}
