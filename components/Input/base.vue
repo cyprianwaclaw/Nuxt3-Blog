@@ -4,7 +4,7 @@
      :class="{ 'has-error': !!errorMessage, success: meta.valid }"
    >
     <div class="base-input label">
-      <!-- <label :for="name"> -->
+      <label :for="name">
       <input
         class="base-input"
         :name="name"
@@ -18,7 +18,7 @@
         required
       />
       <span class="text">{{ label }}</span>
-  <!-- </label> -->
+  </label>
       <div class="help-message" v-if="errorMessage || meta.valid">
         <!-- <p class="red"> -->
           {{ errorMessage || successMessage }}
@@ -124,6 +124,7 @@ $dark: #000;
   input:valid,
   input:-internal-autofill-selected{
     border: 2px solid $primary;
+    outline: 1px solid #0033dd;    
     
   }
   

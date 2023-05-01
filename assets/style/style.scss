@@ -16,9 +16,18 @@ label {
 .base-input {
     position: relative;
     width: 100%;
+    outline: 1px solid #0033dd;
 }
 
 input:focus {
+    appearance: none;
+    -webkit-appearance: none;
+    border-color: $primary;
+    border-width: 20px;
+    color: $text-black !important;
+}
+
+input:active {
     appearance: none;
     -webkit-appearance: none;
     border-color: $primary;

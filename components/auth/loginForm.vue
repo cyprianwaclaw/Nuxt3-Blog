@@ -16,7 +16,7 @@
         <Icon class="icon" v-else name="ph:eye-slash" size="23" />
       </p>
 
-      <button id="submit" type="submit" class="w-full primary mt-5">Wyślij</button>
+      <button id="submit" type="submit" class="w-full primary mt-5 bg-blue-200">Wyślij</button>
     </Form>
     <p @click="logout()">logout</p>
   </div>
@@ -27,7 +27,6 @@ import { Form } from "vee-validate";
 
 const supabase = useSupabase()
 const currentType = ref("password")
-// console.log(supabase3)
 const clickType = ()=>{
 if(currentType.value == "password"){
   currentType.value = "text"
@@ -59,3 +58,9 @@ const logout= async()=>{
   window.location.reload()
 }
 </script>
+<style lang="scss" scoped>
+@import "@/assets/style/variables.scss";
+.icon{
+  color:$icon;
+}
+</style>

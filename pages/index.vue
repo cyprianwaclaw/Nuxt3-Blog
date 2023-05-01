@@ -1,54 +1,16 @@
 <template>
     <div>
-      <div class="grid grid-cols-2">
-        <div class="h-screen w-full bg-blue-600"></div>
-        <div class="auth-form">
-          <div class="width-form">
-            <h2 class="text-4xl mb-7">Zaloguj się</h2>
-            <AuthLoginForm />
-            <div class="flex flex-row w-full mt-[64px]">
-              <div class="border-hr w-full"></div>
-              <div>
-                <p class="px-3 text-or">LUB</p>
-              </div>
-              <div class="border-hr w-full"></div>
-            </div>
-             <!-- <FormIcon /> -->
-             <!-- <div class="mt-[64px]"> -->
-              <p class="mt-[64px]">Nie nasz konta ? <NuxtLink to="/rejestracja" class="register">Zarejestruj się</NuxtLink></p>
-             <!-- </div> -->
-    
-          </div>
-        </div>
-      </div>
-  
-      <!-- <NuxtWelcome />
       <div v-for="single in categories" :key="single.id" class="test">
         <h1 class="ml-10 text-blue-500">{{ single.name }}</h1>
       </div>
-      {{ error }}
-      <button @click="login()">Zaloguj</button>
-      <button @click="logout()">Wyloguj</button> -->
     </div>
   </template>
   <script setup lang="ts">
-  
-  // let { data: categories, error } = await supabase.from("categories").select("*");
-  // const login = async ()=>{
-  //   let { data:user, error:errorLogin } = await supabase.auth.signInWithPassword({
-  //     email: 'cyprianwaclaw@gmail.com',
-  //     password: 'test123456'
-  //   })
-  //   window.location.reload()
-  //   console.log(user)
-  // }
-  // const { data: { user } } = await supabase.auth.getUser()
-  // console.log(user)
-  
-  // const logout= async()=>{
-  //   const { error } = await supabase.auth.signOut()
-  //   window.location.reload()
-  // }
+  const supabase = useSupabase()
+  let { data: categories, error } = await supabase.from("categories").select("*");
+    console.log(supabase)
+
+
   </script>
   <style lang="scss" scoped>
   @import "@/assets/style/variables.scss";
