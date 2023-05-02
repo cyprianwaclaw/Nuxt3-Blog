@@ -1,8 +1,10 @@
 <template>
     <div>
-      <div v-for="single in categories" :key="single.id" class="test">
-        <h1 class="ml-10 text-blue-500">{{ single.name }}</h1>
-      </div>
+      <ClientOnly>
+        <div v-for="single in categories" :key="single.id" class="test">
+          <h1 class="ml-10 text-blue-500">Kategoria: {{ single.name }}</h1>
+        </div>
+      </ClientOnly>
     </div>
   </template>
   <script setup lang="ts">

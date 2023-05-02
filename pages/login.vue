@@ -5,7 +5,9 @@
         <div class="auth-form">
           <div class="width-form">
             <h2 class="text-4xl mb-7">Zaloguj się</h2>
-            <AuthLoginForm />
+            <ClientOnly>
+<AuthLoginForm />
+            </ClientOnly>
             <div class="flex flex-row w-full mt-[64px]">
               <div class="border-hr w-full"></div>
               <div>
@@ -13,7 +15,9 @@
               </div>
               <div class="border-hr w-full"></div>
             </div>
-             <AuthIcon />
+            <ClientOnly>
+             <authIcon />
+             </ClientOnly>
              <div class="mt-[64px]">
               <p class="mt-[64px]">Nie nasz konta ? <NuxtLink to="/rejestracja" class="register">Zarejestruj się</NuxtLink></p>
     
@@ -30,7 +34,7 @@
       <button @click="logout()">Wyloguj</button> -->
     </div>
   </template>
-  <script setup lang="ts">
+  <script setup lang="ts"> 
   // let { data: categories, error } = await supabase.from("categories").select("*");
   // const login = async ()=>{
   //   let { data:user, error:errorLogin } = await supabase.auth.signInWithPassword({
