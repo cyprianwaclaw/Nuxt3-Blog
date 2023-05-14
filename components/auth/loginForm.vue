@@ -3,6 +3,7 @@
     
     <Form @submit="login" :validation-schema="schema">
         <ClientOnly>
+          {{ user }}
         <InputBase name="mail" label="E-mail" id="mail" type="text" />
         <InputBase
         class="mt-5"
@@ -24,8 +25,13 @@
     </div>
 </template>
 <script setup lang="ts">
+import {useAuthTest} from "@/stores/useAuthTest";
 import * as Yup from "yup";
 import { Form } from "vee-validate";
+import { storeToRefs } from "pinia";
+
+// const auth = useAuthTest()
+// const {currentUser} = storeToRefs(auth)
 
 const supabase = useSupabase()
 const currentType = ref("password")
@@ -44,16 +50,20 @@ const schema = Yup.object().shape({
     .matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]*$/, "Imię nie może zawiarać cyfr")
     .max(20, "Imię nie może być dłuższe niż 20 znaków"),
 });
+
+const {signUp, user} = useAuth()
 const login = async ()=>{
-  let { data:user, error:errorLogin } = await supabase.auth.signInWithPassword({
-    email: 'cyprianwaclaw@gmail.com',
-    password: 'test123456'
-  })
-  window.location.reload()
-  console.log(user)
+// await auth.loginEmail()
+  signUp({email:"cyprianwaclaw@gmail.com", password:"test123456"})
+  // let { data:user, error:errorLogin } = await supabase.auth.signInWithPassword({
+  //   email: 'cyprianwaclaw@gmail.com',
+  //   password: 'test123456'
+  // })
+  // window.location.reload()
+  // console.log(user)
 }
-const { data: { user } } = await supabase.auth.getUser()
-console.log(user)
+// const { data: { user } } = await supabase.auth.getUser()
+// console.log(user)
 
 const logout= async()=>{
   const { error } = await supabase.auth.signOut()

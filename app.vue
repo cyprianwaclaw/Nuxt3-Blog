@@ -1,7 +1,6 @@
 <template>
-  <div>
+    <NuxtLoadingIndicator/>
     <NuxtPage />
-  </div>
 </template>
 <style scoped lang="scss">
 @import "@/assets/style/variables.scss";

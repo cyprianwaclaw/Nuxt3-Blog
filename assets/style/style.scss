@@ -3,8 +3,9 @@
     background-color: $page-backgroud
 }
 
-h2 {
-    font-family: $family-heading;
+.h2 {
+    font-family: $family-h2;
+    font-size: 23px !important;
 }
 
 label {
@@ -15,9 +16,7 @@ label {
 
 .base-input {
     position: relative;
-    width: 100%;
-    outline: 1px solid #0033dd;
-}
+    width: 100%;}
 
 input:focus {
     appearance: none;
